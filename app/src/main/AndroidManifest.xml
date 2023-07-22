@@ -13,7 +13,12 @@
         android:theme="@style/Theme.BasicComposeDemo"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".views.activities.rowsAndColumns.RowsAndColumnsBasicsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_rows_and_columns_basics"
+            android:theme="@style/Theme.BasicComposeDemo" />
+        <activity
+            android:name=".views.activities.main.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.BasicComposeDemo">

@@ -1,4 +1,4 @@
-package com.example.basiccomposedemo.ui.theme
+package com.example.basiccomposedemo.views.activities.rowsAndColumns.ui.theme
 
 import android.app.Activity
 import android.os.Build
