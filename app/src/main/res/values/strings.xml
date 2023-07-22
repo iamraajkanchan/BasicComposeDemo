@@ -2,4 +2,5 @@
     <string name="app_name">BasicComposeDemo</string>
     <string name="title_activity_rows_and_columns_basics">RowsAndColumnsBasicsActivity</string>
     <string name="title_activity_modifiers_demo">ModifiersDemoActivity</string>
+    <string name="title_activity_image_card_demo">ImageCardDemoActivity</string>
 </resources>

@@ -13,6 +13,11 @@
         android:theme="@style/Theme.BasicComposeDemo"
         tools:targetApi="31">
         <activity
+            android:name=".views.activities.imagecard.ImageCardDemoActivity"
+            android:exported="false"
+            android:label="@string/title_activity_image_card_demo"
+            android:theme="@style/Theme.BasicComposeDemo" />
+        <activity
             android:name=".views.activities.modifiers.ModifiersDemoActivity"
             android:exported="false"
             android:label="@string/title_activity_modifiers_demo"

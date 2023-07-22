@@ -25,6 +25,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.basiccomposedemo.R
+import com.example.basiccomposedemo.views.activities.imagecard.ImageCardDemoActivity
 import com.example.basiccomposedemo.views.activities.rowsAndColumns.RowsAndColumnsBasicsActivity
 
 class ModifiersDemoActivity : ComponentActivity() {
@@ -75,10 +76,8 @@ class ModifiersDemoActivity : ComponentActivity() {
     }
 
     private fun goToImageCardDemoActivity() {
-        Toast.makeText(
-            this@ModifiersDemoActivity,
-            "Action not implemented yet!",
-            Toast.LENGTH_SHORT
-        ).show()
+        Intent(this@ModifiersDemoActivity, ImageCardDemoActivity::class.java).apply {
+            startActivity(this)
+        }
     }
 }
