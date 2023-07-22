@@ -2,7 +2,6 @@ package com.example.basiccomposedemo.views.activities.imagecard
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -33,6 +32,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.basiccomposedemo.R
 import com.example.basiccomposedemo.views.activities.modifiers.ModifiersDemoActivity
+import com.example.basiccomposedemo.views.activities.textStyling.TextStylingDemoActivity
 
 class ImageCardDemoActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,8 +78,9 @@ class ImageCardDemoActivity : ComponentActivity() {
     }
 
     private fun goToStyingTextDemoActivity() {
-        Toast.makeText(this@ImageCardDemoActivity, "Not implemented yet!", Toast.LENGTH_SHORT)
-            .show()
+        Intent(this@ImageCardDemoActivity, TextStylingDemoActivity::class.java).apply {
+            startActivity(this)
+        }
     }
 }
 
