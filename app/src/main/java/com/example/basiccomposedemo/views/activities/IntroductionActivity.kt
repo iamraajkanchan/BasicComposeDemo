@@ -1,4 +1,4 @@
-package com.example.basiccomposedemo.views.activities.main
+package com.example.basiccomposedemo.views.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -23,13 +23,12 @@ import androidx.compose.ui.unit.ExperimentalUnitApi
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
-import com.example.basiccomposedemo.views.activities.main.ui.theme.BasicComposeDemoTheme
-import com.example.basiccomposedemo.views.activities.rowsAndColumns.RowsAndColumnsBasicsActivity
+import com.example.basiccomposedemo.utility.AddToMainButton
+import com.example.basiccomposedemo.views.activities.ui.theme.BasicComposeDemoTheme
 
-class MainActivity : ComponentActivity() {
-    @ExperimentalUnitApi
+class IntroductionActivity : ComponentActivity() {
+    @OptIn(ExperimentalUnitApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         setContent {
             BasicComposeDemoTheme {
@@ -38,7 +37,8 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     Column {
-                        GreetUser("Bittu")
+                        AddToMainButton(this@IntroductionActivity)
+                        GreetUser(user = "Bittu")
                         Spacer(modifier = Modifier.size(0.dp, 20.dp))
                         GoToRowAndColumnBasicsActivity { goToRowsAndColumnsBasicActivity() }
                     }
@@ -49,7 +49,6 @@ class MainActivity : ComponentActivity() {
 
     private fun goToRowsAndColumnsBasicActivity() {
         Intent(this, RowsAndColumnsBasicsActivity::class.java).apply {
-            flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             startActivity(this)
         }
     }
@@ -57,7 +56,7 @@ class MainActivity : ComponentActivity() {
 
 @ExperimentalUnitApi
 @Composable
-fun GreetUser(user: String) {
+private fun GreetUser(user: String) {
     Text(
         text = "Hello, $user",
         modifier = Modifier.fillMaxWidth(),
@@ -70,7 +69,7 @@ fun GreetUser(user: String) {
 }
 
 @Composable
-fun GoToRowAndColumnBasicsActivity(function: () -> Unit) {
+private fun GoToRowAndColumnBasicsActivity(function: () -> Unit) {
     Button(
         onClick = { function.invoke() },
         modifier = Modifier.fillMaxWidth(),

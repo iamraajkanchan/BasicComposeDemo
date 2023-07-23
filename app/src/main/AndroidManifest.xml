@@ -13,27 +13,32 @@
         android:theme="@style/Theme.BasicComposeDemo"
         tools:targetApi="31">
         <activity
-            android:name=".views.activities.textStyling.TextStylingDemoActivity"
+            android:name=".views.activities.IntroductionActivity"
+            android:exported="false"
+            android:label="@string/title_activity_introduction"
+            android:theme="@style/Theme.BasicComposeDemo" />
+        <activity
+            android:name=".views.activities.TextStylingDemoActivity"
             android:exported="false"
             android:label="@string/title_activity_text_styling_demo"
             android:theme="@style/Theme.BasicComposeDemo" />
         <activity
-            android:name=".views.activities.imagecard.ImageCardDemoActivity"
+            android:name=".views.activities.ImageCardDemoActivity"
             android:exported="false"
             android:label="@string/title_activity_image_card_demo"
             android:theme="@style/Theme.BasicComposeDemo" />
         <activity
-            android:name=".views.activities.modifiers.ModifiersDemoActivity"
+            android:name=".views.activities.ModifiersDemoActivity"
             android:exported="false"
             android:label="@string/title_activity_modifiers_demo"
             android:theme="@style/Theme.BasicComposeDemo" />
         <activity
-            android:name=".views.activities.rowsAndColumns.RowsAndColumnsBasicsActivity"
+            android:name=".views.activities.RowsAndColumnsBasicsActivity"
             android:exported="false"
             android:label="@string/title_activity_rows_and_columns_basics"
             android:theme="@style/Theme.BasicComposeDemo" />
         <activity
-            android:name=".views.activities.main.MainActivity"
+            android:name=".views.activities.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.BasicComposeDemo">

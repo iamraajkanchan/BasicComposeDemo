@@ -1,12 +1,10 @@
-package com.example.basiccomposedemo.views.activities.imagecard
+package com.example.basiccomposedemo.views.activities
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -15,7 +13,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
@@ -31,19 +28,14 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.basiccomposedemo.R
-import com.example.basiccomposedemo.views.activities.modifiers.ModifiersDemoActivity
-import com.example.basiccomposedemo.views.activities.textStyling.TextStylingDemoActivity
+import com.example.basiccomposedemo.utility.AddToMainButton
 
 class ImageCardDemoActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             Column(modifier = Modifier.padding(20.dp)) {
-                Image(
-                    painter = painterResource(id = R.drawable.icon_back_arrow),
-                    contentDescription = "Back Arrow",
-                    modifier = Modifier.clickable { goToModifiersDemoActivity() }
-                )
+                AddToMainButton(this@ImageCardDemoActivity)
                 Spacer(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -60,26 +52,7 @@ class ImageCardDemoActivity : ComponentActivity() {
                         "Panda playing in a park."
                     )
                 }
-                Spacer(modifier = Modifier
-                    .height(20.dp)
-                    .fillMaxWidth())
-                Button(onClick = { goToStyingTextDemoActivity() }) {
-                    Text(text = "Go To Styling Text Demo")
-                }
             }
-        }
-    }
-
-    private fun goToModifiersDemoActivity() {
-        Intent(this@ImageCardDemoActivity, ModifiersDemoActivity::class.java).apply {
-            flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-            startActivity(this)
-        }
-    }
-
-    private fun goToStyingTextDemoActivity() {
-        Intent(this@ImageCardDemoActivity, TextStylingDemoActivity::class.java).apply {
-            startActivity(this)
         }
     }
 }

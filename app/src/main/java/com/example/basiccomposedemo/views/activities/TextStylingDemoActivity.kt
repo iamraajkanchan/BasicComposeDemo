@@ -1,24 +1,18 @@
-package com.example.basiccomposedemo.views.activities.textStyling
+package com.example.basiccomposedemo.views.activities
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.Font
@@ -29,7 +23,7 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.basiccomposedemo.R
-import com.example.basiccomposedemo.views.activities.imagecard.ImageCardDemoActivity
+import com.example.basiccomposedemo.utility.AddToMainButton
 
 class TextStylingDemoActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,11 +36,7 @@ class TextStylingDemoActivity : ComponentActivity() {
         )
         setContent {
             Column(modifier = Modifier.padding(20.dp)) {
-                Image(
-                    painter = painterResource(id = R.drawable.icon_back_arrow),
-                    contentDescription = "Back Arrow",
-                    modifier = Modifier.clickable { goToImageCardDemoActivity() }
-                )
+                AddToMainButton(this@TextStylingDemoActivity)
                 Spacer(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -86,22 +76,7 @@ class TextStylingDemoActivity : ComponentActivity() {
                         .fillMaxWidth()
                         .height(20.dp)
                 )
-                Button(onClick = { goToStateDemoActivity() }) {
-                    Text(text = "Go To State Demo")
-                }
             }
         }
-    }
-
-    private fun goToImageCardDemoActivity() {
-        Intent(this@TextStylingDemoActivity, ImageCardDemoActivity::class.java).apply {
-            flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-            startActivity(this)
-        }
-    }
-
-    private fun goToStateDemoActivity() {
-        Toast.makeText(this@TextStylingDemoActivity, "Not implemented yet!", Toast.LENGTH_SHORT)
-            .show()
     }
 }

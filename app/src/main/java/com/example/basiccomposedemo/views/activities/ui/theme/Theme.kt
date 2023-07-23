@@ -1,4 +1,4 @@
-package com.example.basiccomposedemo.views.activities.imagecard.ui.theme
+package com.example.basiccomposedemo.views.activities.ui.theme
 
 import android.app.Activity
 import android.os.Build

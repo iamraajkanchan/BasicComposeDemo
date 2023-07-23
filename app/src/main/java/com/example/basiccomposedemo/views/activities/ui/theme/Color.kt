@@ -1,4 +1,4 @@
-package com.example.basiccomposedemo.views.activities.modifiers.ui.theme
+package com.example.basiccomposedemo.views.activities.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

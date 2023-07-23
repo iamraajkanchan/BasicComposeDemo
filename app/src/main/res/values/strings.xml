@@ -4,4 +4,5 @@
     <string name="title_activity_modifiers_demo">ModifiersDemoActivity</string>
     <string name="title_activity_image_card_demo">ImageCardDemoActivity</string>
     <string name="title_activity_text_styling_demo">TextStylingDemoActivity</string>
+    <string name="title_activity_introduction">IntroductionActivity</string>
 </resources>
