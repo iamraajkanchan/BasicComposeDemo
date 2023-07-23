@@ -13,6 +13,11 @@
         android:theme="@style/Theme.BasicComposeDemo"
         tools:targetApi="31">
         <activity
+            android:name=".views.activities.StateDemoActivity"
+            android:exported="false"
+            android:label="@string/title_activity_state_demo"
+            android:theme="@style/Theme.BasicComposeDemo" />
+        <activity
             android:name=".views.activities.IntroductionActivity"
             android:exported="false"
             android:label="@string/title_activity_introduction"

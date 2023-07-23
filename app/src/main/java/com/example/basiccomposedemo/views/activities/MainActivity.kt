@@ -48,6 +48,10 @@ class MainActivity : ComponentActivity() {
                         method = { changeActivity(TextStylingDemoActivity::class.java) },
                         title = "Text Styling"
                     )
+                    AddGoToButton(
+                        method = { changeActivity(StateDemoActivity::class.java) },
+                        title = "State"
+                    )
                 }
             }
         }
