@@ -61,13 +61,18 @@ class StateDemoActivity : ComponentActivity() {
 
 @Composable
 private fun AddColouredBox(function: (Color) -> Unit) {
+    val boxColor = remember {
+        mutableStateOf(Color.Cyan)
+    }
     Box(modifier = Modifier
         .fillMaxWidth()
         .fillMaxHeight(0.5f)
-        .background(color = Color.Red)
+        .background(color = boxColor.value)
         .clickable {
-            function(Color(
+            val randomColor = Color(
                 Random.nextFloat(), Random.nextFloat(), Random.nextFloat()
-            ))
+            )
+            boxColor.value = randomColor
+            function(randomColor)
         })
 }
