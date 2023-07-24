@@ -50,7 +50,11 @@ class MainActivity : ComponentActivity() {
                     )
                     AddGoToButton(
                         method = { changeActivity(StateDemoActivity::class.java) },
-                        title = "State"
+                        title = "State Demo"
+                    )
+                    AddGoToButton(
+                        method = { changeActivity(SnackBarDemoActivity::class.java) },
+                        title = "SnackBar Demo"
                     )
                 }
             }
