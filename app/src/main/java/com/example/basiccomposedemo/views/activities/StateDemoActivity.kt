@@ -12,15 +12,11 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.basiccomposedemo.utility.AddToMainButton
 import com.example.basiccomposedemo.views.activities.ui.theme.BasicComposeDemoTheme
@@ -35,6 +31,9 @@ class StateDemoActivity : ComponentActivity() {
                 Column(
                     modifier = Modifier.fillMaxSize(),
                 ) {
+                    val color = remember {
+                        mutableStateOf(Color.Yellow)
+                    }
                     AddToMainButton(this@StateDemoActivity)
                     Spacer(
                         modifier = Modifier
@@ -42,16 +41,18 @@ class StateDemoActivity : ComponentActivity() {
                             .height(20.dp)
                     )
                     AddColouredBox() {
-
+                        color.value = it
                     }
                     Spacer(
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(40.dp)
                     )
-                    Box(modifier = Modifier
-                        .fillMaxSize()
-                        .background(color = Color.Red))
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .background(color = color.value)
+                    )
                 }
             }
         }
@@ -60,16 +61,13 @@ class StateDemoActivity : ComponentActivity() {
 
 @Composable
 private fun AddColouredBox(function: (Color) -> Unit) {
-    val color = remember {
-        mutableStateOf(Color.Yellow)
-    }
     Box(modifier = Modifier
         .fillMaxWidth()
         .fillMaxHeight(0.5f)
-        .background(color = color.value)
+        .background(color = Color.Red)
         .clickable {
-            color.value = Color(
+            function(Color(
                 Random.nextFloat(), Random.nextFloat(), Random.nextFloat()
-            )
+            ))
         })
 }
